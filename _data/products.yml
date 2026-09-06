@@ -1,0 +1,11 @@
+- name: "经典马克杯"
+  price: "¥29.9"
+  description: "简约陶瓷马克杯"
+
+- name: "优质笔记本"
+  price: "¥19.9"
+  description: "80页横线内页，精致装订"
+
+- name: "创意书签"
+  price: "¥9.9"
+  description: "金属质感，激光雕刻"
