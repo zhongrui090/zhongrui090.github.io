@@ -4,10 +4,37 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>我的个人主页</title>
+    <title>我的商品小铺</title>
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-item {
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .price {
+            color: #e44d26;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-    <h1>👋 你好，世界！</h1>
-    <p>这是我用 GitHub Pages 搭建的免费网站！</p>
+    <h1 style="text-align: center;">📦 商品列表</h1>
+    <div class="product-grid">
+        {% for product in site.data.products %}
+        <div class="product-item">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p class="price">价格: {{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
