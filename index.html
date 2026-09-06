@@ -6,35 +6,155 @@
     <meta charset="UTF-8">
     <title>我的商品小铺</title>
     <style>
+        /* ===== 全局背景 ===== */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9edf5 100%);
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        /* ===== 页面标题 ===== */
+        .page-title {
+            text-align: center;
+            padding: 40px 20px 10px 20px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 2px;
+        }
+        .page-title span {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-sub {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+
+        /* ===== 商品网格容器 ===== */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px 50px 30px;
         }
+
+        /* ===== 单个商品卡片 ===== */
         .product-item {
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 8px;
+            background: #ffffff;
+            padding: 24px 20px 20px 20px;
+            border-radius: 16px;
+            /* ===== 边框更清晰 ===== */
+            border: 2px solid #dce3ef;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
             text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
         }
-        .price {
+
+        /* ===== 鼠标悬停效果 ===== */
+        .product-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.20);
+            transform: translateY(-4px);
+        }
+
+        /* ===== 商品名称 ===== */
+        .product-item h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0 0 8px 0;
+        }
+
+        /* ===== 商品描述 ===== */
+        .product-item .desc {
+            font-size: 14px;
+            color: #7f8c8d;
+            line-height: 1.6;
+            min-height: 44px;
+            margin: 6px 0 14px 0;
+        }
+
+        /* ===== 价格 ===== */
+        .product-item .price {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 700;
             color: #e44d26;
-            font-weight: bold;
-            font-size: 1.2em;
+            background: #fef0ed;
+            padding: 4px 18px;
+            border-radius: 20px;
+            margin: 0;
+        }
+
+        /* ===== 商品序号角标（纯装饰） ===== */
+        .product-item .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+        }
+
+        /* ===== 响应式：手机适配 ===== */
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 14px;
+                padding: 10px 14px 30px 14px;
+            }
+            .product-item {
+                padding: 16px 12px 14px 12px;
+            }
+            .product-item h3 {
+                font-size: 16px;
+            }
+            .product-item .price {
+                font-size: 18px;
+                padding: 2px 12px;
+            }
+            .page-title {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">📦 商品列表</h1>
+
+    <h1 class="page-title">📦 <span>商品列表</span></h1>
+    <p class="page-sub">— 所有商品明码标价 —</p>
+
     <div class="product-grid">
         {% for product in site.data.products %}
         <div class="product-item">
+            <!-- 序号角标（自动编号） -->
+            <div class="badge">{{ forloop.index }}</div>
+
             <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <p class="price">价格: {{ product.price }}</p>
+            <p class="desc">{{ product.description }}</p>
+            <p class="price">{{ product.price }}</p>
         </div>
         {% endfor %}
     </div>
+
 </body>
 </html>
