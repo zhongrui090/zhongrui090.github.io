@@ -1,11 +1,39 @@
-- name: "经典马克杯"
-  price: "¥29.9"
-  description: "简约陶瓷马克杯"
+- name: "b 1000分"
+  price: "¥52"
+  description: "不影响正常使用，只需要uid，量多有优惠"
 
-- name: "优质笔记本"
-  price: "¥19.9"
-  description: "80页横线内页，精致装订"
+- name: "xhs 100分"
+  price: "¥40"
+  description: "秒上不排队"
 
-- name: "创意书签"
-  price: "¥9.9"
-  description: "金属质感，激光雕刻"
+- name: "xhs 1000小眼睛-uv"
+  price: "¥48"
+  description: "需要提供初始截图"
+
+- name: "xhs 1000眼睛"
+  price: "¥15"
+  description: "无视风控，无视作品，绝不伤号"
+
+  - name: "sph 1000拨"
+  price: "¥2"
+  description: "打开视频号，找到视频，点击右上角...3个点，下拉点击复制视频ID或是复制链接进入下单"
+
+  - name: "sph 真机1000拨"
+  price: "¥20"
+  description: "真机操作"
+
+    - name: "sph 100分"
+  price: "¥20"
+  description: "真机操作，也有adq加值套餐可以咨询"
+
+    - name: "sph 拇指100"
+  price: "¥15"
+  description: "打开视频号，找到视频，点击右上角...3个点，下拉点击复制视频ID或是复制链接进入下单"
+
+    - name: "sph 爱心100"
+  price: "¥28"
+  description: "打开视频号，找到视频，点击右上角...3个点，下拉点击复制视频ID或是复制链接进入下单"
+
+    - name: "sph 转发100"
+  price: "¥8"
+  description: "打开视频号，找到视频，点击右上角...3个点，下拉点击复制视频ID或是复制链接进入下单"
